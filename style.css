@@ -1,0 +1,137 @@
+html {
+    box-sizing : border-box;
+    height : 100%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing : inherit;
+    margin : 0;
+    padding: 0;
+}
+
+body {
+    align-items : center;
+    background : linear-gradient(320deg, #eb92be, #ffef78, #63c9b4);
+    display : flex;
+    font-family: 'Dosis', sans-serif;
+    height : inherit;
+    justify-content: center;
+}
+
+.calc-text {
+ font-family: "Niconne", cursive;
+  text-align: center;         /* rata tengah */
+  font-size: 65px;            /* ukuran lebih besar */
+  font-weight: bold;          /* tebal */
+  color: #ffffff;             /* warna putih */
+  margin-bottom: 15px;        /* jarak ke wrapper */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* efek shadow */
+  letter-spacing: 2px;        /* spasi antar huruf */
+}
+
+.wrapper {
+    backdrop-filter : blur(5.5px); 
+    -webkit-backdrop-filter : blur(5.5px);  
+    border-radius : 16px; 
+    box-shadow : 0 4px 30px rgba(35, 35, 35, 0.1); 
+    color : #232323; 
+    /* backdrop-filter : blur(4px);  */
+    /* -webkit-backdrop-filter : blur(4px);  */
+    background : rgba(255, 255, 255, 0.30); 
+    border : 1px solid rgba(255, 255, 255, 0.34); 
+    flex-basis : 400px; 
+    /* 
+    *) flex-basis → ukuran utama elemen flex sebelum ada fleksibilitas flex-grow atau flex-shrink.
+    *) Dalam konteks ini, berarti .wrapper akan mencoba punya lebar dasar 400px.
+    *) Kalau parent-nya punya display: flex, maka .wrapper akan patuh pada aturan flex layout.
+    *) Karena kamu pakai display: flex di body untuk center, nilai ini dipakai agar kalkulator punya ukuran tetap 400px.
+    *) Kalau kamu ganti jadi width: 400px;, hasilnya hampir sama (karena .wrapper tidak fleksibel di layout ini).
+    *) flex-basis lebih berguna kalau ada beberapa item di dalam flex-container.
+    */
+    height : 540px; 
+    padding : 20px 35px; 
+}
+/* Keterangan wrapper
+-)  backdrop-filter → properti CSS untuk memberikan efek pada background di belakang elemen (misalnya blur, brightness, contrast). Jadi bukan isi elemen yang diblur, tapi area di belakangnya.
+-) -webkit-backdrop-filter → prefix untuk browser berbasis WebKit (Safari, iOS, beberapa Chrome versi lama).
+-) Kenapa ada 2? → Supaya cross-browser compatible. Beberapa browser cuma kenal versi -webkit-....
+Keterangan wrapper End */
+
+.screen {
+    backdrop-filter : blur(5.5px);
+    -webkit-backdrop-filter : blur(5.5px);
+    background : rgba(255, 255, 255, 0.75);
+    border : 1px solid rgba(255, 255, 255, 0.01);
+    border-radius : 16px;
+    box-shadow : 0 4px 30px rgba(35, 35, 35, 0.1);
+    color : #232323;
+    font-size : 35px;
+    overflow : auto;
+    padding : 20px;
+    text-align : right; 
+    width : 326px;
+}
+
+.calc-button-row {
+    display : flex;
+    justify-content : space-between;
+    margin : 5% 0;
+}
+
+.calc-button {
+    backdrop-filter : blur(5.5px);
+    -webkit-backdrop-filter : blur(5.5px);
+    background : rgba(255, 255, 255, 0.75);
+    border : 1px solid rgba(255, 255, 255, 0.01);
+    border-radius : 16px;
+    box-shadow : 0 4px 30px rgba(35, 35, 35, 0.1);
+   color : #232323;
+   flex-basis : 20%;
+   font-family : inherit;
+   font-size : 24px;
+   height : 65px;
+}
+
+.calc-button:last-child {
+    backdrop-filter : blur(5.5px);
+    -webkit-backdrop-filter : blur(5.5px);
+    background : rgba(255, 255, 255, 0.75);
+    border : 1px solid rgba(255, 255, 255, 0.01);
+    border-radius : 16px;
+    box-shadow : 0 4px 30px rgba(35, 35, 35, 0.1);
+   color : #fff;
+   background : #d72880;
+}
+
+.calc-button:last-child:hover {
+    background-color : inherit;
+    color: inherit;
+} 
+
+.calc-button:hover {
+    background-color: inherit;
+}
+
+.calc-button:last-child:active {
+    background-color : #ffef78;
+} 
+
+.calc-button-row button:nth-child(1):active,
+.calc-button-row button:nth-child(2):active, 
+.calc-button-row button:nth-child(3):active {
+    background: pink;
+}
+
+
+
+.double {
+    flex-basis : 47%;
+}
+
+.triple {
+    flex-basis : 46.5%;
+}
+
+
