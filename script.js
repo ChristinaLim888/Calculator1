@@ -1,3 +1,5 @@
+/* Dari Youtube tapi tidak berfungsi dengan benar */
+
 // Ambil elemen layar kalkulator (tempat menampilkan input/output)
 const screen = document.querySelector(".screen");
 
